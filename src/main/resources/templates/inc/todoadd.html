@@ -1,0 +1,20 @@
+<section data-th-fragment="todoadd" class="card shadow p-3 mb-5 bg-white rounded col-sm-4">
+
+			<fieldset>
+				<legend>Ajouter</legend>
+				<form class="form" action="#"  method="post" data-th-action="@{/}" data-th-object="${todo}" accept-charset="utf-8">
+					<div class="form-group">
+						<label for="inpname">Nom</label>
+						<input class="form-control" id="inpname" type="text" data-th-field="*{nom}">
+					</div>
+					<div class="form-group">
+						<label for="inpdescription">Description</label>
+						<input class="form-control" id="inpdescription" type="text" data-th-field="*{description}">
+					</div>
+					<input class="btn btn-block btn-outline-primary" type="submit" value="envoyer">
+		
+				</form>
+			</fieldset>
+
+</section>
+

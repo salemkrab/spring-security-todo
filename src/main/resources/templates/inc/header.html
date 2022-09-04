@@ -1,0 +1,9 @@
+<header class="jumbotron" data-th-fragment="connexion">
+  <h1 class="display-4"><span data-th-text="#{base.title}" ></span></h1>
+  <hr class="my-4">
+  <div class="d-flex flex-row-reverse" sec:authorize="isAuthenticated()">
+    <div class="col-sm-3 ">
+    <div data-th-replace="~{inc/connexion :: connexion}"></div>
+    </div>
+  </div>
+</header>

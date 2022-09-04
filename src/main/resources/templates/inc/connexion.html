@@ -1,0 +1,13 @@
+<div class="card shadow p-3 mb-5 bg-white rounded" data-th-fragment="connexion" >
+  <h5 class="card-header">Connexion</h5>
+  <div class="card-body">
+    <h5 class="card-title">Bienvenue</h5>
+    <p class="card-text">
+      Bonjour <span data-th-text="${username.username}"></span>
+      <br>
+      <span sec:authorize="hasRole('USER') || hasRole('ADMIN')" class="badge badge-primary">User</span>
+      <span sec:authorize="hasRole('ADMIN')" class="badge badge-danger">Admin</span>
+
+    </p>
+  </div>
+</div>

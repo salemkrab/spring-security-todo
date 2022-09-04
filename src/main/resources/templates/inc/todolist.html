@@ -1,0 +1,29 @@
+<section data-th-fragment="todolist" class="col-sm-8 justify-content-md-center">
+			<table class="table table-sm shadow p-3 mb-5 bg-white rounded">
+				<thead>
+					<tr>
+						<th>Nom</th><th>Descritpion</th><th>Supprimer</th>
+					</tr>
+				<thead>
+				<tbody>
+					<tr data-th-if="${todos.empty}">
+						<td colspan="2">Pas d'info</td>
+					</tr>
+					<tr data-th-each="todo: ${todos}">
+						<td><span data-th-text="${todo.nom }"></span></td>
+						<td><span data-th-text="${todo.description}"></span></td>
+						<td>
+						<form action="#"  method="post" data-th-action="@{/delete}" accept-charset="utf-8">
+							<input type="hidden" data-th-name="nom" data-th-value="${todo.nom}">
+							<input type="hidden" data-th-name="description" data-th-value="${todo.description}">
+							<input type="submit" class="btn btn-sm btn-block btn-outline-danger" value="X">
+	
+						</form>
+						
+					</td>
+				</tr>
+			</tbody>
+		
+		</table>
+
+</section>

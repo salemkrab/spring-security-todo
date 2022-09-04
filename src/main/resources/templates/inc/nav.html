@@ -1,0 +1,12 @@
+	<nav data-th-fragment="navigation"  class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="#" data-th-href="@{/}">home</a></li>
+				<li sec:authorize="! isAuthenticated()" class="nav-item"><a class="nav-link btn btn-sm btn-outline-primary" href="#" data-th-href="@{/login}">login</a></li>
+				<li sec:authorize="hasRole('ADMIN')" class="nav-item"><a class="nav-link" href="#" data-th-href="@{/admin/}">Zone admin</a></li>
+				<li sec:authorize="hasRole('USER') || hasRole('ADMIN')" class="nav-item"><a class="nav-link" href="#" data-th-href="@{/user/}">Zone user</a></li>
+				<li sec:authorize="isAuthenticated()" class="nav-item"><a class="nav-link btn btn-sm btn-outline-danger" href="#" data-th-href="@{/logout}">deco</a></li>
+			</ul>
+		</div>
+
+	</nav>
