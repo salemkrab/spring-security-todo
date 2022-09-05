@@ -29,7 +29,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	@Transactional
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = Optional.ofNullable(userService.findByUsername(username))
-				.orElseThrow(() -> new UsernameNotFoundException("User " + username + " not found"));
+				.orElseThrow(() -> new UsernameNotFoundException("User " + username + " non trouvé"));
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
 				getGrantedAuthorities(user));
 	}
